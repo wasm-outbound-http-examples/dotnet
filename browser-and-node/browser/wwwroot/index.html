@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP request for C# / .Net</title>
+    <script type="module" src="../../main.js"></script>
+</head>
+<body>
+<h2>HTTP Request from inside WASM using System.Net.Http.HttpClient</h2>
+
+<p>This example uses <a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-8.0">System.Net.Http.HttpClient</a> from standard library.</p>
+<p>See the output in browser developer console.</p>
+
+<p>Actual code:</p>
+<pre>
+
+using System;
+using System.Net.Http;
+
+HttpClient client = new HttpClient();
+string uri = "https://httpbin.org/anything";
+string responseText = await client.GetStringAsync(uri);
+
+Console.WriteLine("body: " + responseText);
+
+</pre>
+
+<footer><small>Created for (wannabe-awesome) <a href="https://github.com/vasilev/HTTP-request-from-inside-WASM">list</a></small></footer>
+</body>
+</html>
