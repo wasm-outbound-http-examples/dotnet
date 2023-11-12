@@ -1,3 +1,3 @@
-import { dotnet } from './_framework/dotnet.js';
+import { dotnet } from './dotnet.js';
 
 await dotnet.run();
