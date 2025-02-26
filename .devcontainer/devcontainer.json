@@ -1,11 +1,11 @@
 {
   "name": "DotNet: HTTP request from WASM",
-  "image": "mcr.microsoft.com/dotnet/sdk:8.0",
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0",
   "features": {
     "ghcr.io/devcontainers/features/common-utils": {},
     "ghcr.io/devcontainers/features/node:1": {}
   },
-  "postCreateCommand": "apt-get install -y python3",
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
   "customizations": {
     "vscode": {
       "extensions": [

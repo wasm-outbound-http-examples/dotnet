@@ -1,17 +1,85 @@
 # Make HTTP requests from inside WASM in C# / .Net
 
-This devcontainer is configured to provide you a DotNet SDK 8.0 and latest version of Node.js.
+This devcontainer is configured to provide you a DotNet SDK 9.0 (with installed workloads `wasm-tools` and `wasm-experimental`) 
+and the latest version of Node.js.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/wasm-outbound-http-examples/dotnet)
 
-1. [Browser demo](https://wasm-outbound-http-examples.github.io/dotnet/).
+### Browser / JS runtime Examples
 
+<table>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>Description</th>
+<th>Browser demo</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
 
-2. Example in `browser-and-node/browser` directory allows you to build a browser example (same as demo) using standard library's `System.Net.Http.HttpClient` yourself and experiment with it.
-   For details, see its [README](browser-and-node/browser/README.md).
+[System.Net.Http.HttpClient for browser](browser-and-node/browser/README.md)
 
+</td>
+<td>
 
-3. Example in `browser-and-node/node` directory allows you to build a Node.js / Bun / Deno  example using standard `System.Net.Http.HttpClient` yourself and experiment with it.
-   For details, see its [README](browser-and-node/node/README.md).
+Use `HttpClient` from standard library to send HTTP requests from web browser.
+
+</td>
+<td>
+
+[Demo](https://wasm-outbound-http-examples.github.io/dotnet/)
+
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+
+[System.Net.Http.HttpClient for Node / Bun / Deno](browser-and-node/node/README.md)
+
+</td>
+<td>
+
+Use `HttpClient` from standard library to send HTTP requests from standalone / server-side JS runtime.
+
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+
+[RestSharp for browser](browser-and-node-RestSharp/browser/README.md)
+
+</td>
+<td>
+
+Use RestSharp library to send HTTP requests from web browser.
+
+</td>
+<td>
+
+[Demo](https://wasm-outbound-http-examples.github.io/dotnet/restsharp/)
+
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+
+[RestSharp for Node / Bun / Deno](browser-and-node-RestSharp/node/README.md)
+
+</td>
+<td>
+
+Use RestSharp library to send HTTP requests from standalone / server-side JS runtime.
+
+</td>
+<td>
+</td>
+</tr>
+</table>
 
 <sub>Created for (wannabe-awesome) [list](https://github.com/vasilev/HTTP-request-from-inside-WASM)</sub>
