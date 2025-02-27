@@ -20,17 +20,29 @@ cd browser-and-node-RestSharp/node
 2. Create new .Net project using `wasmconsole` template:
 
 ```sh
-dotnet new wasmconsole
+dotnet new wasmconsole -n NodeProject
 ```
 
 3. Replace generated HelloWorld-like `Program.cs` and `main.mjs` with HTTP-enabled ones:
 
 ```sh
-cp ../Program.cs ./
-cp ../main.js ./main.mjs
+cp ../Program.cs ./NodeProject/
+cp ../main.js ./NodeProject/main.mjs
 ```
 
-4. Compile the example:
+4. `cd` into the folder of the new .Net project to use it:
+
+```sh
+cd NodeProject
+```
+
+5. Install RestSharp library as dependency:
+
+```sh
+dotnet add package RestSharp
+```
+
+6. Compile the example:
 
 ```sh
 dotnet build

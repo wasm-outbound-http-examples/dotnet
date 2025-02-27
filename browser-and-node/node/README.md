@@ -2,7 +2,7 @@
 
 ## Instructions for this devcontainer
 
-Tested with .Net version 8.0.100-rc.2.23502.2 .
+Tested with .Net SDK version 9.0.200, Bun 1.2.4, Deno 2.2.2, Node.js 22.14.0 .
 
 ### Preparation
 
@@ -28,17 +28,23 @@ cd browser-and-node/node
 2. Create new .Net project using `wasmconsole` template:
 
 ```sh
-dotnet new wasmconsole
+dotnet new wasmconsole -n NodeProject
 ```
 
 3. Replace generated HelloWorld-like `Program.cs` and `main.mjs` with HTTP-enabled ones:
 
 ```sh
-cp ../Program.cs ./
-cp ../main.js ./main.mjs
+cp ../Program.cs ./NodeProject/
+cp ../main.js ./NodeProject/main.mjs
 ```
 
-4. Compile the example:
+4. `cd` into the folder of the new .Net project to use it:
+
+```sh
+cd NodeProject
+```
+
+5. Compile the example:
 
 ```sh
 dotnet build
@@ -55,7 +61,7 @@ dotnet run
 Or, alternatively, the same by directly using `node` command:
 
 ```sh
-node bin/Debug/net8.0/browser-wasm/AppBundle/main.mjs
+node bin/Debug/net9.0/browser-wasm/AppBundle/main.mjs
 ```
 
 ### Test with Bun
@@ -69,7 +75,7 @@ curl -fsSL https://bun.sh/install | bash
 2. Run with Bun:
 
 ```sh
-~/.bun/bin/bun bin/Debug/net8.0/browser-wasm/AppBundle/main.mjs
+~/.bun/bin/bun bin/Debug/net9.0/browser-wasm/AppBundle/main.mjs
 ```
 
 ### Test with Deno
@@ -77,16 +83,14 @@ curl -fsSL https://bun.sh/install | bash
 1. Install Deno:
 
 ```sh
-curl -fsSL https://deno.land/x/install/install.sh | sh
+curl -fsSL https://deno.land/install.sh | bash -s -- --yes
 ```
 
 2. Run with Deno:
 
 ```sh
-~/.deno/bin/deno run --allow-read --allow-net bin/Debug/net8.0/browser-wasm/AppBundle/main.mjs
+~/.deno/bin/deno run --allow-read --allow-net --unstable-bare-node-builtins bin/Debug/net9.0/browser-wasm/AppBundle/main.mjs
 ```
-
-You may want adding `Deno.exit();` to the end of `main.mjs`, in the case Deno does not exit after printing to console.
 
 ### Finish
 

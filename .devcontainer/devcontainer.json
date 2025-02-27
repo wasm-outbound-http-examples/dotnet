@@ -1,5 +1,5 @@
 {
-  "name": "DotNet: HTTP request from WASM",
+  "name": ".Net: HTTP request from WASM",
   "image": "mcr.microsoft.com/dotnet/sdk:9.0",
   "features": {
     "ghcr.io/devcontainers/features/common-utils": {},

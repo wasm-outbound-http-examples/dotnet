@@ -2,7 +2,7 @@
 
 ## Instructions for this devcontainer
 
-Tested with .Net version 8.0.100-rc.2.23502.2 .
+Tested with .Net SDK version 9.0.200 .
 
 ### Preparation
 
@@ -30,10 +30,12 @@ cd browser-and-node/browser
 dotnet new wasmbrowser
 ```
 
-3. Replace generated HelloWorld-like `Program.cs` with HTTP-enabled one:
+3. Replace generated HelloWorld-like `Program.cs` and `wwwroot` contents with HTTP-enabled ones:
 
 ```sh
 cp ../Program.cs ./
+cp ../index.html ./wwwroot/
+cp ../main.js ./wwwroot/
 ```
 
 4. Compile the example:
